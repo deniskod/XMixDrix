@@ -35,13 +35,18 @@ const App = () => {
       const [a, b, c] = combo;
       if (board[a] && board[a] === board[b] && board[a] === board[c]) {
         setWinner(board[a]);
-        alert(`${board[a]} Wins!`);
+        setTimeout(() => {
+          alert(`${board[a]} Wins!`);
+        }, 100);
         return;
       }
     }
 
     if (!board.includes(null)) {
       setWinner("Draw");
+      setTimeout(() => {
+        alert("Draw!");
+      }, 100);
     }
   };
 
